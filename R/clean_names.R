@@ -66,9 +66,10 @@ set_space_delim <- function(x)
   stringi::stri_trim()
 
 drop_sp. <- function(x){
-  # drop: cladophora sp2, cladophora sp., cladophora ssp.
-  stringi::stri_replace_all_regex(x, "\\ssp[s\\d\\.]?$", "")
-
+  # drop: cladophora sp2, cladophora sp., cladophora sps, cladophora sp
+  x <- stringi::stri_replace_all_regex(x, "\\ssp[s\\d\\.]?$", "")
+  # drop: cladophora spp, cladophora spp.
+  stringi::stri_replace_all_regex(x, "\\sspp[\\.]?$", "")
 }
 binomial_names <- function(x){
   s <-
