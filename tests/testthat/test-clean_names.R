@@ -8,6 +8,9 @@ test_that("set_space_delim", {
 test_that("drop_sp.", {
   x <- drop_sp.("Poa sp.")
   expect_identical(x, "Poa")
+
+  x <- drop_sp.("Poa spp.")
+  expect_identical(x, "Poa")
 })
 
 test_that("binomial_names", {

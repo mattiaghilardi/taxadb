@@ -1,5 +1,7 @@
 # taxadb 0.2.2
 
+* `clean_names` now also removes the "spp." epithet
+
 # taxadb 0.2.1
 
 * substantial speed improvements to all `filter_*` and `get_*` functions
